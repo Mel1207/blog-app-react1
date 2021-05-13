@@ -26,7 +26,7 @@ const useFetch = (url) => {
                     setError(err.message)
                     console.log(err.message);
                 })
-        }, 3000);
+        }, 1000);
     }, []);
 
 
