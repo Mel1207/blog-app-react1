@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import BlogList from './Bloglist';
+import BlogList from './BlogList';
 
 const Home = () => {
 
@@ -8,11 +8,15 @@ const Home = () => {
         { title: 'The black parade', body: 'lorem ipsum...', author: 'John', id: 2},
         { title: 'CSS Life', body: 'lorem ipsum...', author: 'Mel', id: 3},
     ]);
+
+    const handleDelete = (id) => {
+        const newBlog = blogs.filter(blog => blog.id !== id)
+        setBlogs(newBlog)
+    }
     
     return ( 
         <div className="home">
-            <BlogList blogs={blogs} title="All Blogs!"/>
-            <BlogList blogs={blogs.filter((blog) => blog.author === 'Mel')} title="Mel Blogs"/>
+            <BlogList blogs={blogs} title="All Blogs!" handleDelete={handleDelete}/>
         </div>
     );
 }
