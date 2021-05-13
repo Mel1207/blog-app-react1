@@ -9,23 +9,24 @@ const Home = () => {
         { title: 'CSS Life', body: 'lorem ipsum...', author: 'Mel', id: 3},
     ]);
 
+    const [name, setName] = useState('mel');
+
     const handleDelete = (id) => {
         const newBlog = blogs.filter(blog => blog.id !== id)
         setBlogs(newBlog)
     }
     
     useEffect(() => {
-        console.log('use effect run')
-        console.log(blogs)
-
-        if (blogs.length <= 2) {
-            console.log(`${blogs.length} remaining blogs left`)
-        }
-    })
+        console.log('use effect run');
+        console.log(name)
+    }, [name]);
 
     return ( 
         <div className="home">
             <BlogList blogs={blogs} title="All Blogs!" handleDelete={handleDelete}/>
+
+            <button onClick={() => setName('luigi')}>change name</button>
+            <p>{ name }</p>
         </div>
     );
 }
