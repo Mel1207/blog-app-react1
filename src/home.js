@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import BlogList from './BlogList';
 
 const Home = () => {
@@ -14,6 +14,15 @@ const Home = () => {
         setBlogs(newBlog)
     }
     
+    useEffect(() => {
+        console.log('use effect run')
+        console.log(blogs)
+
+        if (blogs.length <= 2) {
+            console.log(`${blogs.length} remaining blogs left`)
+        }
+    })
+
     return ( 
         <div className="home">
             <BlogList blogs={blogs} title="All Blogs!" handleDelete={handleDelete}/>
