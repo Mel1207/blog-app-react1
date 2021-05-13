@@ -9,6 +9,10 @@
   font-family: 'Quicksand', sans-serif;
 } 
 
+body {
+  background: #fafafa
+}
+
 .navbar {
   padding: 20px;
   display: flex;
@@ -44,6 +48,7 @@
 
 /* Blog Preview List */
 .blog-preview {
+  background: #fff;
   padding: 10px 16px;
   margin: 20px 0;
   border-bottom: 1px solid #fafafa;
